@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bookticket.css">
+    <title>Metro Ticket</title>
+</head>
+<body  >  
+<div id="splash-screen">
+    <h1>Welcome to My Metro Page</h1>
+  </div>
+        
+    <form id="ticketForm" onsubmit="return bookTicket()">
+        <div class="legend">
+      <fieldset>
+           <h1>Metro Ticket Booking</h1>
+    <div class="form">
+        <div class="name">
+            <label for="userName">name: </label>
+            <input type="text" id="userName" placeholder="Enter your name"  required>
+        </div><br>
+        
+        <div class="gender">
+        <label for="male">SELECT GENDER: </label>
+        <br>
+        <input class="inpgender" type="radio" name="gender" id="male" oninput="calculateTicket()" value="Male" required>Male
+        <input class="inpgender" type="radio" name="gender" id="female" oninput="calculateTicket()" value="Female">Female
+    </div><br>
+        
+        <div class="age">
+            <label for="userAge">Age : </label>
+
+            <input type="number" id="userAge" placeholder="Enter your age" oninput="calculateTicket()" required>
+        </div><br>
+        <div class="mobile">
+            <label for="mobile">Mob. No. : </label>
+        
+   <input type="number" name="" id="mobile" placeholder="Enter mobile number" required maxlength="10">
+        </div><br>
+
+        <div class="station">
+        <label for="metroStations" >Select a Metro Station:</label>
+<select id="metroStations" onchange="calculateTicket()" required>
+    <option value="" disabled selected>Select a station</option>
+  
+  <option value="dnNagar">D.N. Nagar</option>
+  <option value="azadNagar">Azad Nagar</option>
+  <option value="andheri">Andheri</option>
+  <option value="westernExpress">Western Express Highway</option>
+  <option value="chakala">Chakala (J.B. Nagar)</option>
+  <option value="airportRoad">Airport Road</option>
+  <option value="marolNaka">Marol Naka</option>
+  <option value="sakiNaka">Saki Naka</option>
+  <option value="asalpha">Asalpha</option>
+  <!-- Add more options for Line 1 stations as needed -->
+</select>
+
+        </div><br>
+        <div class="destination">
+    <label for="destinationmetroStations">Select a Destination:</label>
+    <select class="inpdestination" id="destinationmetroStations" name="metroStations" onchange="calculateTicket()" required>destination:</label>
+>
+    <option value="" disabled selected>Select a station</option>
+   
+    <option value="dnNagar">dnNagar</option>
+    <option value="azadNagar">Azad Nagar</option>
+    <option value="andheri">Andheri</option>
+    <option value="westernExpress">Western Express</option>
+    <option value="chakala">Chakala</option>
+    <option value="airportRoad">Airport Road</option>
+    <option value="marolNaka">Marol Naka</option>
+    <option value="sakiNaka">Saki Naka</option>
+    <option value="asalpha">Asalpha</option>
+    <!-- Add more options for Line 1 stations as needed -->
+  </select>
+
+</div> <br>
+
+        <div class="ticket">Ticket amount:
+            <input type="text" id="display" readonly>
+        </div>
+<br>
+<div class="btc">
+        <button onclick="bookTicket()"> book ticket</button>
+    </div>
+    </div>
+</fieldset>
+</div>
+</form>
+
+
+<script src="script.js"></script>
+<script src="metro.js"></script>
+</body>
+</html>
+
+
+
